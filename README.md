@@ -1,7 +1,7 @@
 # IDM-LINUX-KALI-DEBIAN
 This projects intends to show how u can integrate install IDM in Kali linux or any Debian Distro by using wine.
 
-# KALI LINUX / DEBIAN IDM Installation and Browser Integration
+# KALI LINUX / Ubuntu / DEBIAN IDM Installation and Browser Integration
 
 ## Step 1: Update Your System
 
@@ -65,4 +65,11 @@ Or use a browser extensions .
     $ idm [ANY DOWNLOAD LINK]
     ```
     IF IDM Launch successfully with the link u r good to go.
+    
+Now Try to Download supported file from ur browser and check if IDM launche Correctly  or Not.
+
+## References
+
+- https://forum.manjaro.org/t/wine-could-not-load-kernel32-dll-status-c0000135/69811
+- https://github.com/tazihad/idm-linux
 
