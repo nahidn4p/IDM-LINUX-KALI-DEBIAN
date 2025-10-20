@@ -68,6 +68,43 @@ Or use a browser extensions .
     
 Now Try to Download supported file from ur browser and check if IDM launche Correctly  or Not.
 
+## Creating Desktop Shortcuts
+
+- Run this in terminal
+```
+  nano ~/.local/share/applications/idm.desktop
+```
+- Paste this code
+```
+[Desktop Entry]
+Name=Internet Download Manager (Wine)
+Comment=Launch Internet Download Manager via Wine
+Exec=env WINEPREFIX="/home/riyad/myapp/prefix" wine-stable C:\\ProgramData\\Microsoft\\Windows\\Start\ Menu\\Programs\\Internet\ Download\ Manager\\Internet\ Download\ Manager.lnk
+Type=Application
+StartupNotify=true
+Path=$HOME/myapp/prefix/drive_c/Program Files (x86)/Internet Download Manager/
+Icon=$HOME/myapp/prefix/drive_c/Program Files (x86)/Internet Download Manager/idm.png
+Categories=Network;Download;Wine;
+```
+- Make it Executable
+```
+chmod +x ~/.local/share/applications/idm.desktop
+```
+- Download Logo
+```
+wget https://upload.wikimedia.org/wikipedia/en/9/92/Internet_Download_Manager_logo.png
+```
+- Move logo and rename it
+```
+mv Internet_Download_Manager_logo.png idm.png && mv idm.png /home/riyad/myapp/prefix/drive_c/Program\ Files/Internet\ Download\ Manager/
+
+```
+- Refresh Desktop Icon Database
+```
+update-desktop-database ~/.local/share/applications/
+```
+- DONE
+
 ## References
 
 - https://forum.manjaro.org/t/wine-could-not-load-kernel32-dll-status-c0000135/69811
