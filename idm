@@ -1,0 +1,36 @@
+#!/bin/bash
+
+# Set your custom Wine prefix
+WINEPREFIX="$HOME/myapp/prefix"
+
+# Path to IDM executable (check both 32-bit & 64-bit installs)
+if [ -f "$WINEPREFIX/drive_c/Program Files/Internet Download Manager/IDMan.exe" ]; then
+    IDMAN_EXE="$WINEPREFIX/drive_c/Program Files/Internet Download Manager/IDMan.exe"
+elif [ -f "$WINEPREFIX/drive_c/Program Files (x86)/Internet Download Manager/IDMan.exe" ]; then
+    IDMAN_EXE="$WINEPREFIX/drive_c/Program Files (x86)/Internet Download Manager/IDMan.exe"
+else
+    echo "❌ IDM not found inside $WINEPREFIX"
+    exit 1
+fi
+
+# Check if wine-stable exists (you can also use just 'wine')
+if command -v wine-stable >/dev/null 2>&1; then
+    WINE_CMD="wine-stable"
+elif command -v wine >/dev/null 2>&1; then
+    WINE_CMD="wine"
+else
+    echo "❌ Wine is not installed."
+    exit 1
+fi
+
+# Handle arguments
+if [[ "$1" == "-d" && -n "$2" ]]; then
+    env WINEPREFIX="$WINEPREFIX" "$WINE_CMD" "$IDMAN_EXE" /d "$2"
+elif [[ "$1" == *://* ]]; then
+    env WINEPREFIX="$WINEPREFIX" "$WINE_CMD" "$IDMAN_EXE" /d "$1"
+else
+    echo "Usage:"
+    echo "  idm [URL]       → Download URL with IDM"
+    echo "  idm -d [URL]    → Same, explicit -d flag"
+    exit 0
+fi
