@@ -82,8 +82,8 @@ Comment=Launch Internet Download Manager via Wine
 Exec=env WINEPREFIX="/home/riyad/myapp/prefix" wine-stable C:\\ProgramData\\Microsoft\\Windows\\Start\ Menu\\Programs\\Internet\ Download\ Manager\\Internet\ Download\ Manager.lnk
 Type=Application
 StartupNotify=true
-Path=$HOME/myapp/prefix/drive_c/Program Files (x86)/Internet Download Manager/
-Icon=$HOME/myapp/prefix/drive_c/Program Files (x86)/Internet Download Manager/idm.png
+Path=$HOME/myapp/prefix/drive_c/Program\ Files/Internet\ Download\ Manager/
+Icon=$HOME/myapp/prefix/drive_c/Program\ Files/Internet\ Download\ Manager//idm.png
 Categories=Network;Download;Wine;
 ```
 - Make it Executable
