@@ -3,6 +3,15 @@ This projects intends to show how u can integrate install IDM in Kali linux or a
 
 # KALI LINUX / Ubuntu / DEBIAN IDM Installation and Browser Integration
 
+## Automatic Installation (Not Recommended)
+### Clone the project then run the install.sh script
+```bash
+$ git clone https://github.com/nahidn4p/IDM-LINUX-KALI-DEBIAN
+$ cd IDM-LINUX-KALI-DEBIAN
+$ chmod +x install.sh
+$ ./install.sh
+```
+## Manual Install (Recommended)
 ## Step 1: Update Your System
 
  ```bash
